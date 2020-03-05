@@ -1,14 +1,14 @@
 $first-font: "Roboto", sans-serif;
 //$second-font: "Fredericka the Great", sans-serif;
 $color-one: #212353; 
-$color-two: #FFC84D; 
+$color-two: #EEAA12; 
 $color-three: #9C69E2; 
-$color-four: #F063B8; 
+$color-four: #F063B8;
 
 // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px;
 $grid-columns: 12;
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1366px);
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1320px, xxl: 1920px);
 $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
 
 $gutter: $grid-gutter-width;

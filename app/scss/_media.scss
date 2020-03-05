@@ -31,22 +31,158 @@
 
 //Medium: ≤768px
 @include media-breakpoint-up(md) {
+	.container {
+		padding: 0 24px;
+	}
+
+	.toggler {
+		right: 24px;
+	}
+
+	.about {
+		& .container {
+			padding: 0 60px;
+		}
+
+		&__title {
+			font-size: 40px;
+		}
+
+		&__text {
+			font-size: 23px;
+		}
+	}
+
+	.slider {
+		&__wrapper {
+			border-radius: 50px;
+			margin: 0 43px 92px;
+			padding: 87px 0 60px;
+		}
+
+		&__item {
+			margin: 10px 142px;
+			padding: 40px 60px 40px 114px;
+			position: relative;
+
+			&:before {
+				position: absolute;
+				font-size: 200px;
+				top: 35px;
+				left: -60px;
+				line-height: 1;
+				font-weight: bold;
+				color: $color-three;
+				z-index: 2;
+
+			}
+
+			&--first:before {
+				content: '1';
+			}
+
+			&--second:before {
+				content: '2';
+			}
+
+			&--third:before {
+				content: '3';
+			}
+
+			&--fourth:before {
+				content: '4';
+			}
+		}
+	}
+
+	.footer {
+		padding-bottom: 40px;
+
+		&__nav {
+			margin-bottom: unset;
+		}
+	}
+
+	.sub {
+		width: 430px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+
+		&__email {
+			width: 247px;
+			margin-bottom: unset;
+		}
+	}
+
+	//	slick slider styles START
+	.slick {
+		&-dots {
+			text-align: left;
+			padding: 24px 0 0 60px;
+		}
+	}
+
+	//slick slider styles END
 }
 
 //Large: ≤992px
-//@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(lg) {
+	.container {
+		padding: 0 30px;
+	}
 
-//Extra large: ≤1200px
+	.toggler {
+		right: 30px;
+	}
+
+	.about {
+		.container {
+			padding: 0 170px;
+		}
+	}
+
+	.slider {
+		&__wrapper {
+			max-width: 682px;
+			margin: 0 auto 92px;
+		}
+
+		&__item {
+			max-width: 390px;
+			margin: 10px 142px 10px 150px;
+		}
+	}
+
+	.footer {
+		&__nav {
+			flex-grow: 1;
+		}
+
+		.logo {
+			margin-right: 70px;
+		}
+	}
+
+}
+
+//Extra large: ≤1320px
 @include media-breakpoint-up(xl) {
 	.container {
-		width: 1200px;
+		width: 1320px;
+		padding: 0;
 	}
 
 	.header {
 		.container {
 			flex-direction: row;
-
+			justify-content: space-between;
+			align-items: center;
 		}
+	}
+
+	.logo {
+		margin-right: 100px;
 	}
 
 	.menu {
@@ -59,6 +195,13 @@
 		width: auto;
 		box-shadow: none;
 		z-index: auto;
+		position: relative;
+		top: auto;
+		left: auto;
+		background: none;
+		flex-grow: 1;
+		justify-content: space-between;
+		padding: 0
 	}
 
 	.nav {
@@ -68,14 +211,133 @@
 		border: none;
 		padding-left: 0px;
 		justify-content: space-between;
-		width: 619px;
+		width: 350px;
 
 		&__link {
+			font-size: 18px;
+			border: none;
 			margin-bottom: 0;
+			line-height: 60px;
+			padding: 0;
+			flex-grow: 1;
+			text-align: center;
+
+			&:first-child {
+				border: none;
+			}
+		}
+	}
+
+	.submenu {
+		position: relative;
+
+		&:after {
+			right: 16px;
+			top: 26px;
+			height: 6.25px;
+			width: 10px;
+			border: none;
+			background-image: url(../img/arrow-small-down.svg);
+		}
+
+		&:hover {
+			&:after {
+				background-image: url(../img/arrow-small-down-2.svg);
+			}
+		}
+
+		&--active {
+			&:after {
+				transform: rotate(180deg);
+				background-image: url(../img/arrow-small-down-2.svg);
+			}
+		}
+
+		&__name {
+			padding: 0;
+		}
+
+		&__list {
+			position: absolute;
+			left: -24px;
+			background: #FFFFFF;
+			border: 1px solid $color-three;
+			box-shadow: 0px 4px 0px #E2CEFE;
+			padding: 12px 17px 12px 24px;
+			border-radius: 10px;
+
+			&:before {
+				position: absolute;
+				content: '';
+				top: -9.78px;
+				left: 60px;
+				width: 18px;
+				height: 18px;
+				background-color: #fff;
+				border-top: 1px solid $color-three;
+				border-left: 1px solid $color-three;
+
+				transform: rotate(45deg);
+			}
+		}
+
+		&__item {
+			padding: 0;
+			line-height: 30px;
+
+		}
+
+		&__link {
+			white-space: pre;
+			font-size: 16px;
+			color: $color-one;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: unset;
+			}
 		}
 	}
 
 	.toggler {
 		display: none;
+	}
+
+	.slider {
+		&__wrapper {
+			margin: 0 auto 151px;
+			max-width: 1200px;
+		}
+		&__list {
+			width: 1200px;			
+			padding: 0 60px 0px;
+
+		}
+		&__item {
+			min-width: 390px;
+			margin: 10px 75px;
+		}
+	}
+	.footer {
+		padding: 75px 0;
+		.logo {
+			flex-grow: 1px;
+			margin-right: 0;
+		}
+		&__nav {
+			flex-direction: row;
+			flex-grow: 1;
+			justify-content: center;
+		}
+		&__link {
+			margin-right: 54px;
+		}
+		.sub {
+			width: 600px;
+			&__email {
+				width: 419px;
+			}
+		}
 	}
 }

@@ -562,6 +562,13 @@ DEFAULT CSS END
 		position: relative;
 		border-bottom: 1px solid #D6B9FF;
 		padding: 0 20px;
+		transition: color 0.2s;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-three;
+		}
 
 		&:first-child {
 			border-top: 1px solid #D6B9FF;
@@ -578,23 +585,33 @@ DEFAULT CSS END
 		content: '';
 		right: 20px;
 		top: 30px;
-		width: 10px;
-		height: 10px;
-		border-top: 3px solid $color-one;
-		border-right: 3px solid $color-one;
-		border-radius: 1px;
-		transform: rotate(45deg);
+		width: 11px;
+		height: 18px;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-image: url(../img/arrow-open.svg);
 		transition: transform 0.3s ease-in-out 0.1s;
 	}
 
 	&--active {
 		&:after {
-			transform: rotate(135deg)
+			transform: rotate(90deg)
 		}
 	}
 
 	&__name {
 		padding: 0 20px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		appearance: none;
+		font-weight: inherit;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-three;
+		}
 	}
 
 	&__list {
@@ -690,7 +707,7 @@ DEFAULT CSS END
 .slider {
 
 	&__wrapper {
-		background-color: $color-two;
+		background-color: #FFC84D;
 		padding: 35px 0;
 		margin-bottom: 73px;
 	}
@@ -698,11 +715,24 @@ DEFAULT CSS END
 	&__list {}
 
 	&__item {
-		padding: 30px 40px;
+		padding: 40px 30px;
 		background: #FFF3D7;
 		box-shadow: 0px 10px 0px #F5BD3F;
 		border-radius: 50px;
-		margin: 0 20px 10px;
+		margin: 10px 20px 10px;
+		position: relative;
+
+		&--new:after {
+			position: absolute;
+			content: 'NEW';
+			background-color: #F063B8;
+			color: #fff;
+			font-size: 18px;
+			line-height: 34px;
+			padding: 0 15px;
+			left: 33px;
+			top: -6px;
+		}
 	}
 
 	&__title {
@@ -721,6 +751,13 @@ DEFAULT CSS END
 		position: relative;
 		font-size: 16px;
 		display: inline-block;
+		transition: color 0.2s;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-three;
+		}
 
 		&:after {
 			position: absolute;
@@ -764,6 +801,15 @@ DEFAULT CSS END
 		line-height: 2.5;
 	}
 
+	&__link {
+		transition: color 0.2s;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-two;
+		}
+	}
 }
 
 .sub {
@@ -784,7 +830,7 @@ DEFAULT CSS END
 		padding: 10px 15px;
 		box-sizing: border-box;
 		margin-bottom: 22px;
-		width: 100%;
+		width: 280px;
 	}
 
 	&__btn {

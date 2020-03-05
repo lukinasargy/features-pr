@@ -3,7 +3,7 @@ $(function () {
 	$('.slider__list').slick({
 		responsive: [
 			{
-				breakpoint: 1920,
+				breakpoint: 1320,
 				settings: {
 					arrows: false,
 					dots: true,
@@ -15,7 +15,7 @@ $(function () {
 				}
 			},
 			{
-				breakpoint: 5000,
+				breakpoint: Infinity,
 				settings: {
 					arrows: false,
 					dots: true,
@@ -24,46 +24,25 @@ $(function () {
 					autoplay: true,
 					pauseOnHover: true,
 					autoplaySpeed: 8000,
-					adaptiveHeight: true
+					adaptiveHeight: true,
 				}
 			}
 		]
 	});
 
 	//scrolls
-	$(".js_scroll").on("click", function (event) {
-		event.preventDefault();
+//	$(".js_scroll").on("click", function (event) {
+//		event.preventDefault();
+//
+//		var id = $(this).attr('href'),
+//			top = $(id).offset().top;
+//
+//		$('body,html').animate({
+//			scrollTop: top
+//		}, 1000);
+//	});
 
-		var id = $(this).attr('href'),
-			top = $(id).offset().top;
 
-		$('body,html').animate({
-			scrollTop: top
-		}, 1000);
-	});
-
-
-	//animations
-
-	$(document).ready(function () {
-		$('.first').addClass('visible');
-		$('.main').on('focus load resize scroll', function () {
-
-			//            $('.header-text').html('scrolltop+innerHeight=' + Math.round($('.main').scrollTop() + $(window).innerHeight()) + 'scrolltop= ' + Math.round($('.main').scrollTop()));
-			$('.animated').each(function () {
-				var elementTop = $(this).position().top + $('.main').scrollTop();
-				var elementBot = $(this).position().top + $('.main').scrollTop() + $(this).height();
-				var windowTop = $('.main').scrollTop();
-				var windowBot = $('.main').scrollTop() + $(window).innerHeight();
-
-				if (((elementTop + $(this).height() * 0.7) <= windowBot) && (elementBot > windowTop)) {
-					$(this).addClass('visible');
-				} else if ((elementTop > windowBot) || (elementBot < windowTop)) {
-					$(this).removeClass('visible');
-				}
-			});
-		});
-	});
 
 	$(".toggler").on('click', function () {
 		$(this).toggleClass('toggler--active');
@@ -76,23 +55,9 @@ $(function () {
 		}
 	});
 	
-	$('.faq__subtitle').on('click', function () {
-		$(this).toggleClass('faq__subtitle--active');
-		$(this).parent().toggleClass('faq__item--active').children('.faq__text').slideToggle(500);
-	});
 	$('.submenu').on('click', function () {
 		$(this).toggleClass('submenu--active');
-		$(this).children(".submenu__list").toggleClass('submenu__list--active').slideToggle(500);
-	});
-
-	$(window).on("resize load", function () {
-		if (window.matchMedia("(min-width:1366px)").matches) {
-			$(".contacts__link--tel").appendTo($('#header-container'));
-			$(".contacts__social").appendTo($('#promo-container'));
-		} else {
-			$(".contacts__link--tel").appendTo(".contacts");
-			$(".contacts__social").appendTo(".contacts");
-		}
+		$(this).children(".submenu__list").toggleClass('submenu__list--active').slideToggle(300);
 	});
 
 
