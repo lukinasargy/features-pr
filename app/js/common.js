@@ -42,8 +42,6 @@ $(function () {
 //		}, 1000);
 //	});
 
-
-
 	$(".toggler").on('click', function () {
 		$(this).toggleClass('toggler--active');
 		$(".menu").toggleClass('menu--active');
@@ -55,9 +53,9 @@ $(function () {
 		}
 	});
 	
-	$('.submenu').on('click', function () {
-		$(this).toggleClass('submenu--active');
-		$(this).children(".submenu__list").toggleClass('submenu__list--active').slideToggle(300);
+	$('.submenu__name').on('click', function () {
+		$(this).parent('.submenu').toggleClass('submenu--active');
+		$(this).siblings(".submenu__list").toggleClass('submenu__list--active').slideToggle(300);
 	});
 
 

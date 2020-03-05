@@ -37,10 +37,11 @@ gulp.task('styles', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		//'app/libs/jquery/dist/jquery.min.js',
-		'app/js/scripts.min.js', // Always at the end
+//		'app/js/scripts.min.js', // Always at the end
+		'app/js/common.js', // Always at the end
 		])
-	.pipe(concat('common.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(concat('scripts.min.js'))
+	 .pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browsersync.reload({ stream: true }))
 });
@@ -60,7 +61,7 @@ gulp.task('rsync', function() {
 	}))
 });
 
-gulp.task('watch', ['styles', /*'js',*/ 'browser-sync'], function() {
+gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browsersync.reload)

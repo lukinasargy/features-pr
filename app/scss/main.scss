@@ -606,11 +606,15 @@ DEFAULT CSS END
 		border: none;
 		appearance: none;
 		font-weight: inherit;
+		width: 100%;
+		text-align: left;
 
 		&:hover,
 		&:active,
 		&:focus {
 			color: $color-three;
+			outline: none;
+
 		}
 	}
 
