@@ -483,22 +483,6 @@ input[type=number] {
 	padding: 0 20px;
 }
 
-.section {
-	position: relative;
-	min-height: 100vh;
-	padding-top: 124px;
-
-	&-title {
-		font-size: 28px;
-		line-height: 32px;
-		display: inline-block;
-		padding-bottom: 10px;
-		font-weight: 500;
-		min-width: 288px;
-		border-bottom: 3px solid $color-one;
-	}
-}
-
 /*!
 *
 DEFAULT CSS END
@@ -564,11 +548,11 @@ DEFAULT CSS END
 		padding: 0 20px;
 		transition: color 0.2s;
 
-		&:hover,
-		&:active,
-		&:focus {
-			color: $color-three;
-		}
+//		&:hover,
+//		&:active,
+//		&:focus {
+//			color: $color-three;
+//		}
 
 		&:first-child {
 			border-top: 1px solid #D6B9FF;
@@ -579,6 +563,7 @@ DEFAULT CSS END
 .submenu {
 	position: relative;
 	padding: 0;
+	z-index: 2;
 
 	&:after {
 		position: absolute;
@@ -591,6 +576,7 @@ DEFAULT CSS END
 		background-size: 100%;
 		background-image: url(../img/arrow-open.svg);
 		transition: transform 0.3s ease-in-out 0.1s;
+		z-index: 0;
 	}
 
 	&--active {
@@ -610,7 +596,6 @@ DEFAULT CSS END
 		text-align: left;
 
 		&:hover,
-		&:active,
 		&:focus {
 			color: $color-three;
 			outline: none;
@@ -741,13 +726,14 @@ DEFAULT CSS END
 
 	&__title {
 		font-size: 25px;
-		line-height: 1.3;
+		line-height: 50px;
 		margin-bottom: 20px;
 	}
 
 	&__text {
 		font-size: 16px;
 		margin-bottom: 20px;
+		line-height: 1.6;
 	}
 
 	&__link {
@@ -778,7 +764,7 @@ DEFAULT CSS END
 
 //sections end
 .footer {
-	padding: 50px 0;
+	padding: 56px 0 52px;
 	background-color: $color-three;
 	color: #fff;
 	font-size: 16px;

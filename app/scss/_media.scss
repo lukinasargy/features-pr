@@ -96,6 +96,7 @@
 	}
 
 	.footer {
+		padding-top: 52px;
 		padding-bottom: 40px;
 
 		&__nav {
@@ -105,6 +106,7 @@
 
 	.sub {
 		width: 430px;
+		height: 48px;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
@@ -130,6 +132,29 @@
 @include media-breakpoint-up(lg) {
 	.container {
 		padding: 0 30px;
+	}
+
+	.nav {
+		&__link {
+			padding: 0 32px;
+		}
+	}
+
+	.submenu {
+		padding: 0;
+
+		&__name {
+			padding: 0 32px;
+		}
+
+		&:after {
+			right: 32px;
+		}
+
+		&__item {
+			font-size: 25px;
+			line-height: 69px;
+		}
 	}
 
 	.toggler {
@@ -174,6 +199,8 @@
 	}
 
 	.header {
+		padding: 30px 0;
+
 		.container {
 			flex-direction: row;
 			justify-content: space-between;
@@ -182,7 +209,7 @@
 	}
 
 	.logo {
-		margin-right: 100px;
+		margin-right: 105px;
 	}
 
 	.menu {
@@ -211,7 +238,7 @@
 		border: none;
 		padding-left: 0px;
 		justify-content: space-between;
-		width: 350px;
+		width: 325px;
 
 		&__link {
 			font-size: 18px;
@@ -266,6 +293,7 @@
 			box-shadow: 0px 4px 0px #E2CEFE;
 			padding: 12px 17px 12px 24px;
 			border-radius: 10px;
+			text-align: left;
 
 			&:before {
 				position: absolute;
@@ -296,7 +324,7 @@
 			&:hover,
 			&:active,
 			&:focus {
-				color: unset;
+				color: $color-three;
 			}
 		}
 	}
@@ -305,37 +333,58 @@
 		display: none;
 	}
 
+	.about {
+		padding-top: 90px;
+		.container {
+			padding: 0 330px;
+		}
+	}
+
 	.slider {
 		&__wrapper {
 			margin: 0 auto 151px;
 			max-width: 1200px;
 		}
+
 		&__list {
-			width: 1200px;			
+			width: 1200px;
 			padding: 0 60px 0px;
 
 		}
+
 		&__item {
 			min-width: 390px;
 			margin: 10px 75px;
 		}
 	}
+	.slick-dots {
+		padding: 30px 0 0 0px;
+		margin-left: -8px;
+	}
 	.footer {
 		padding: 75px 0;
+
 		.logo {
-			flex-grow: 1px;
-			margin-right: 0;
+			margin-right:0px;
+			padding-top: 6px;
 		}
+
 		&__nav {
 			flex-direction: row;
 			flex-grow: 1;
 			justify-content: center;
+			font-size: 16px;
+			margin-left: -10px;
 		}
+
 		&__link {
 			margin-right: 54px;
+			font-weight: 500;
 		}
+
 		.sub {
 			width: 600px;
+
 			&__email {
 				width: 419px;
 			}
